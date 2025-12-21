@@ -48,7 +48,7 @@ const AppointmentsList = ({ appointments }: AppointmentsListProps) => {
         // Store return URL before redirecting to payment
         sessionStorage.setItem(
           "paymentReturnUrl",
-          "/dashboard/my-appointments"
+          "/dashboard/my-appointment"
         );
         window.location.replace(result.data.paymentUrl);
       } else {
@@ -274,7 +274,7 @@ const AppointmentsList = ({ appointments }: AppointmentsListProps) => {
           <CardFooter className="border-t pt-4">
             <div className="flex gap-2 w-full">
               <Button variant="outline" size="sm" className="flex-1" asChild>
-                <Link href={`/dashboard/my-appointments/${appointment.id}`}>
+                <Link href={`/dashboard/my-appointment/${appointment.id}`}>
                   View Details
                 </Link>
               </Button>

@@ -76,14 +76,14 @@ export async function proxy(request: NextRequest) {
 
     if (accessToken) {
         const userInfo = await getUserInfo();
-        if (userInfo.needPasswordChange) {
-            if (pathname !== "/reset-password") {
-                const resetPasswordUrl = new URL("/reset-password", request.url);
-                resetPasswordUrl.searchParams.set("redirect", pathname);
-                return NextResponse.redirect(resetPasswordUrl);
-            }
-            return NextResponse.next();
-        }
+        // if (userInfo.needPasswordChange) {
+        //     if (pathname !== "/reset-password") {
+        //         const resetPasswordUrl = new URL("/reset-password", request.url);
+        //         resetPasswordUrl.searchParams.set("redirect", pathname);
+        //         return NextResponse.redirect(resetPasswordUrl);
+        //     }
+        //     return NextResponse.next();
+        // }
 
         if (userInfo && !userInfo.needPasswordChange && pathname === '/reset-password') {
             return NextResponse.redirect(new URL(getDefaultDashboardRoute(userRole as UserRole), request.url));

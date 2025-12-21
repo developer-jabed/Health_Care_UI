@@ -16,7 +16,7 @@ const PaymentSuccessContent = () => {
     revalidate("my-appointments");
     const storedUrl =
       sessionStorage.getItem("paymentReturnUrl") ||
-      "/dashboard/my-appointments";
+      "/dashboard/my-appointment";
     sessionStorage.removeItem("paymentReturnUrl");
 
     // Start countdown
@@ -44,7 +44,7 @@ const PaymentSuccessContent = () => {
   const handleManualRedirect = () => {
     const storedUrl =
       sessionStorage.getItem("paymentReturnUrl") ||
-      "/dashboard/my-appointments";
+      "/dashboard/my-appointment";
     sessionStorage.removeItem("paymentReturnUrl");
     router.push(storedUrl);
   };
