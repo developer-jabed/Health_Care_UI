@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/card";
 export const dynamic = "force-dynamic";
 
+
+// fix register page 
 const RegisterPage = () => {
   return (
     <>
